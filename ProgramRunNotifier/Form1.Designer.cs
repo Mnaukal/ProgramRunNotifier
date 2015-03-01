@@ -30,14 +30,15 @@
         {
             this.openFileDialog_target = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button_icon = new System.Windows.Forms.Button();
             this.button_create = new System.Windows.Forms.Button();
             this.button_browse = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_notification = new System.Windows.Forms.TextBox();
             this.textBox_path = new System.Windows.Forms.TextBox();
-            this.button_icon = new System.Windows.Forms.Button();
             this.openFileDialog_icon = new System.Windows.Forms.OpenFileDialog();
+            this.label_success = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +51,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.label_success);
             this.groupBox1.Controls.Add(this.button_icon);
             this.groupBox1.Controls.Add(this.button_create);
             this.groupBox1.Controls.Add(this.button_browse);
@@ -63,6 +65,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Create New Shortcut";
+            // 
+            // button_icon
+            // 
+            this.button_icon.Location = new System.Drawing.Point(9, 74);
+            this.button_icon.Name = "button_icon";
+            this.button_icon.Size = new System.Drawing.Size(132, 23);
+            this.button_icon.TabIndex = 4;
+            this.button_icon.Text = "Choose Icon";
+            this.button_icon.UseVisualStyleBackColor = true;
+            this.button_icon.Click += new System.EventHandler(this.button_icon_Click);
             // 
             // button_create
             // 
@@ -122,20 +134,20 @@
             this.textBox_path.Size = new System.Drawing.Size(164, 20);
             this.textBox_path.TabIndex = 0;
             // 
-            // button_icon
-            // 
-            this.button_icon.Location = new System.Drawing.Point(9, 74);
-            this.button_icon.Name = "button_icon";
-            this.button_icon.Size = new System.Drawing.Size(132, 23);
-            this.button_icon.TabIndex = 4;
-            this.button_icon.Text = "Choose Icon";
-            this.button_icon.UseVisualStyleBackColor = true;
-            this.button_icon.Click += new System.EventHandler(this.button_icon_Click);
-            // 
             // openFileDialog_icon
             // 
             this.openFileDialog_icon.FileName = "openFileDialog1";
             this.openFileDialog_icon.Filter = "icon file | *.ico";
+            // 
+            // label_success
+            // 
+            this.label_success.AutoSize = true;
+            this.label_success.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_success.ForeColor = System.Drawing.Color.Green;
+            this.label_success.Location = new System.Drawing.Point(46, 109);
+            this.label_success.Name = "label_success";
+            this.label_success.Size = new System.Drawing.Size(0, 25);
+            this.label_success.TabIndex = 5;
             // 
             // Form1
             // 
@@ -163,6 +175,7 @@
         private System.Windows.Forms.TextBox textBox_path;
         private System.Windows.Forms.Button button_icon;
         private System.Windows.Forms.OpenFileDialog openFileDialog_icon;
+        private System.Windows.Forms.Label label_success;
     }
 }
 

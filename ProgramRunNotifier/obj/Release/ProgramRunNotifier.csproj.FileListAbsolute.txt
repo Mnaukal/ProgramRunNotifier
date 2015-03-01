@@ -8,3 +8,4 @@ D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\obj\Release\Program
 D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\obj\Release\ProgramRunNotifier.csproj.GenerateResource.Cache
 D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\obj\Release\ProgramRunNotifier.exe
 D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\obj\Release\ProgramRunNotifier.pdb
+D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\obj\Release\ProgramRunNotifier.csprojResolveAssemblyReference.cache

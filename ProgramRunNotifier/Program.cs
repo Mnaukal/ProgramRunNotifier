@@ -24,7 +24,14 @@ namespace ProgramRunNotifier
 
                 MessageBox.Show(alert, "Alert!");
 
-                Process.Start(path);
+                try
+                {
+                    Process.Start(path);
+                }
+                catch
+                {
+                    MessageBox.Show("File not found: \n" + path, "Error");
+                }
 
                 Application.Exit();
                 return;
