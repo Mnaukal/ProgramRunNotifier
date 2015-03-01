@@ -1,0 +1,11 @@
+D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\bin\Debug\ProgramRunNotifier.exe.config
+D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\bin\Debug\ProgramRunNotifier.exe
+D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\bin\Debug\ProgramRunNotifier.pdb
+D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\obj\Debug\ProgramRunNotifier.csprojResolveAssemblyReference.cache
+D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\obj\Debug\ProgramRunNotifier.Form1.resources
+D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\obj\Debug\ProgramRunNotifier.Properties.Resources.resources
+D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\obj\Debug\ProgramRunNotifier.csproj.GenerateResource.Cache
+D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\obj\Debug\ProgramRunNotifier.exe
+D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\obj\Debug\ProgramRunNotifier.pdb
+D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\obj\Debug\Interop.IWshRuntimeLibrary.dll
+D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\obj\Debug\ProgramRunNotifier.csproj.ResolveComReference.cache

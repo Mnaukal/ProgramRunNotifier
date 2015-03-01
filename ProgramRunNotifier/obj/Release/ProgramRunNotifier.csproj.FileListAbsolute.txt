@@ -1,0 +1,10 @@
+D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\bin\Release\ProgramRunNotifier.exe.config
+D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\obj\Release\Interop.IWshRuntimeLibrary.dll
+D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\obj\Release\ProgramRunNotifier.csproj.ResolveComReference.cache
+D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\bin\Release\ProgramRunNotifier.exe
+D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\bin\Release\ProgramRunNotifier.pdb
+D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\obj\Release\ProgramRunNotifier.Form1.resources
+D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\obj\Release\ProgramRunNotifier.Properties.Resources.resources
+D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\obj\Release\ProgramRunNotifier.csproj.GenerateResource.Cache
+D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\obj\Release\ProgramRunNotifier.exe
+D:\Michal\Programovani\ProgramRunNotifier\ProgramRunNotifier\obj\Release\ProgramRunNotifier.pdb
