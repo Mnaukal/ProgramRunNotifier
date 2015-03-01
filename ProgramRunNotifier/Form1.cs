@@ -21,6 +21,8 @@ namespace ProgramRunNotifier
         public Form1()
         {
             InitializeComponent();
+
+            iconPath = AppDomain.CurrentDomain.BaseDirectory + "m.ico";
         }
 
         private void button_browse_Click(object sender, EventArgs e)
@@ -49,22 +51,31 @@ namespace ProgramRunNotifier
 
         private void button_create_Click(object sender, EventArgs e)
         {
-            string desktopDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string shortcutLocation = System.IO.Path.Combine(desktopDir, fileName + ".lnk");
+            try
+            {
+                string desktopDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                string shortcutLocation = System.IO.Path.Combine(desktopDir, fileName + ".lnk");
 
-            WshShell shell = new WshShell();
-            IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(shortcutLocation);
+                WshShell shell = new WshShell();
+                IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(shortcutLocation);
 
-            shortcut.Description = fileName;        // The description of the shortcut
-            shortcut.IconLocation = iconPath;       // The icon of the shortcut
+                shortcut.Description = fileName;        // The description of the shortcut
+                shortcut.IconLocation = iconPath;       // The icon of the shortcut
 
-            shortcut.TargetPath = Assembly.GetExecutingAssembly().Location;
-            shortcut.Arguments = "\"" + 
-                textBox_path.Text + "\" \"" +           //target path
-                textBox_notification.Text + "\"";       //alert (notification) text
-            shortcut.Save();
+                shortcut.TargetPath = Assembly.GetExecutingAssembly().Location;
+                shortcut.Arguments = "\"" +
+                    textBox_path.Text + "\" \"" +           //target path
+                    textBox_notification.Text + "\"";       //alert (notification) text
+                shortcut.Save();
 
-            label_success.Text = "SUCCESS";
+                label_success.Visible = true;
+                label_error.Visible = false;
+            }
+            catch
+            {
+                label_success.Visible = false;
+                label_error.Visible = true;
+            }
         }        
     }
 }

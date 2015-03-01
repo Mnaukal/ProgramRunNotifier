@@ -30,6 +30,7 @@
         {
             this.openFileDialog_target = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label_success = new System.Windows.Forms.Label();
             this.button_icon = new System.Windows.Forms.Button();
             this.button_create = new System.Windows.Forms.Button();
             this.button_browse = new System.Windows.Forms.Button();
@@ -38,7 +39,8 @@
             this.textBox_notification = new System.Windows.Forms.TextBox();
             this.textBox_path = new System.Windows.Forms.TextBox();
             this.openFileDialog_icon = new System.Windows.Forms.OpenFileDialog();
-            this.label_success = new System.Windows.Forms.Label();
+            this.label_error = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +53,8 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label_error);
             this.groupBox1.Controls.Add(this.label_success);
             this.groupBox1.Controls.Add(this.button_icon);
             this.groupBox1.Controls.Add(this.button_create);
@@ -65,6 +69,18 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Create New Shortcut";
+            // 
+            // label_success
+            // 
+            this.label_success.AutoSize = true;
+            this.label_success.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_success.ForeColor = System.Drawing.Color.Green;
+            this.label_success.Location = new System.Drawing.Point(46, 109);
+            this.label_success.Name = "label_success";
+            this.label_success.Size = new System.Drawing.Size(118, 25);
+            this.label_success.TabIndex = 5;
+            this.label_success.Text = "SUCCESS";
+            this.label_success.Visible = false;
             // 
             // button_icon
             // 
@@ -139,15 +155,27 @@
             this.openFileDialog_icon.FileName = "openFileDialog1";
             this.openFileDialog_icon.Filter = "icon file | *.ico";
             // 
-            // label_success
+            // label_error
             // 
-            this.label_success.AutoSize = true;
-            this.label_success.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_success.ForeColor = System.Drawing.Color.Green;
-            this.label_success.Location = new System.Drawing.Point(46, 109);
-            this.label_success.Name = "label_success";
-            this.label_success.Size = new System.Drawing.Size(0, 25);
-            this.label_success.TabIndex = 5;
+            this.label_error.AutoSize = true;
+            this.label_error.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_error.ForeColor = System.Drawing.Color.Red;
+            this.label_error.Location = new System.Drawing.Point(65, 109);
+            this.label_error.Name = "label_error";
+            this.label_error.Size = new System.Drawing.Size(85, 25);
+            this.label_error.TabIndex = 5;
+            this.label_error.Text = "ERROR";
+            this.label_error.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(147, 79);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(201, 12);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "You can change your icon later using file explorer";
             // 
             // Form1
             // 
@@ -176,6 +204,8 @@
         private System.Windows.Forms.Button button_icon;
         private System.Windows.Forms.OpenFileDialog openFileDialog_icon;
         private System.Windows.Forms.Label label_success;
+        private System.Windows.Forms.Label label_error;
+        private System.Windows.Forms.Label label3;
     }
 }
 
