@@ -8,6 +8,9 @@ Use the UI to create shortcut. Icon will be created on your desktop (you can mov
 **Notification Text** = text that will be displayed on the notificaition<br>
 **Choose Icon** = icon of the shortcut<br>
 
+## Download
+<a href="https://github.com/Mnaukal/ProgramRunNotifier/blob/master/ProgramRunNotifier/bin/Release/ProgramRunNotifier.rar?raw=true">Program Run Notifier</a>
+
 ## Homepage
 https://github.com/Mnaukal/ProgramRunNotifier
 
