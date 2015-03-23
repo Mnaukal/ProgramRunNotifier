@@ -20,9 +20,24 @@ namespace ProgramRunNotifier
             if(args.Length > 2)
             {
                 string path = args[1];
-                string alert = args[2];
+                string type = args[2];
+                string message = args[3];
 
-                MessageBox.Show(alert, "Alert!");
+                if (type == "n")
+                {
+                    MessageBox.Show(message, "Alert!");
+                }
+                else if(type == "p")
+                {
+                    try
+                    {
+                        Process.Start(message);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("File not found: \n" + message, "Error");
+                    }
+                }
 
                 try
                 {

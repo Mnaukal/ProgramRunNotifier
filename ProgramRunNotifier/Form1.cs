@@ -63,9 +63,24 @@ namespace ProgramRunNotifier
                 shortcut.IconLocation = iconPath;       // The icon of the shortcut
 
                 shortcut.TargetPath = Assembly.GetExecutingAssembly().Location;
-                shortcut.Arguments = "\"" +
-                    textBox_path.Text + "\" \"" +           //target path
-                    textBox_notification.Text + "\"";       //alert (notification) text
+
+                string arguments;
+                if(radioButton_notification.Checked)
+                {
+                    arguments = "\"" +
+                        textBox_path.Text + "\" \"" +           //target path
+                        "n" + "\" \"" +                         //type (Notification)
+                        textBox_notification.Text + "\"";       //alert (notification) text
+                }
+                else
+                {
+                    arguments = "\"" +
+                        textBox_path.Text + "\" \"" +           //target path
+                        "p" + "\" \"" +                         //type (Process)
+                        textBox_process.Text + "\"";            //process to start
+                }
+
+                shortcut.Arguments = arguments;
                 shortcut.Save();
 
                 label_success.Visible = true;
@@ -75,6 +90,35 @@ namespace ProgramRunNotifier
             {
                 label_success.Visible = false;
                 label_error.Visible = true;
+            }
+        }
+
+        private void button_browseProcess_Click(object sender, EventArgs e)
+        {
+            openFileDialog_process.FileName = textBox_process.Text;
+            DialogResult result = openFileDialog_process.ShowDialog();
+
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                textBox_process.Text = openFileDialog_process.FileName;
+
+                //fileName = System.IO.Path.GetFileNameWithoutExtension(openFileDialog_target.FileName);
+            }
+        }
+
+        private void radioButton_notification_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radioButton_notification.Checked)
+            {
+                textBox_notification.Enabled = true;
+                textBox_process.Enabled = false;
+                button_browseProcess.Enabled = false;
+            }
+            else if(radioButton_process.Checked)
+            {
+                textBox_notification.Enabled = false;
+                textBox_process.Enabled = true;
+                button_browseProcess.Enabled = true;
             }
         }        
     }
