@@ -22,7 +22,7 @@ namespace ProgramRunNotifier
         {
             InitializeComponent();
 
-            iconPath = AppDomain.CurrentDomain.BaseDirectory + "m.ico";
+            iconPath = AppDomain.CurrentDomain.BaseDirectory + "default.ico";
         }
 
         private void button_browse_Click(object sender, EventArgs e)
@@ -51,10 +51,34 @@ namespace ProgramRunNotifier
 
         private void button_create_Click(object sender, EventArgs e)
         {
-            try
+            if (checkBox_desktop.Checked)
             {
                 string desktopDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                string shortcutLocation = System.IO.Path.Combine(desktopDir, fileName + ".lnk");
+                CreateShortcut(desktopDir);
+            }
+            if (checkBox_start.Checked)
+            {
+                string startDir = Environment.GetFolderPath(Environment.SpecialFolder.StartMenu);
+                CreateShortcut(startDir);
+            }
+            if (checkBox_customLocation.Checked)
+            {
+                string customDir = textBox_customLocation.Text;
+                CreateShortcut(customDir);
+            }
+        }
+
+        private void CreateShortcut(string path)
+        {
+            try
+            {
+                if(string.IsNullOrWhiteSpace(textBox_path.Text))
+                {
+                    Error("Target path can't be empty");
+                    return;
+                }
+
+                string shortcutLocation = System.IO.Path.Combine(path, fileName + ".lnk");
 
                 WshShell shell = new WshShell();
                 IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(shortcutLocation);
@@ -65,7 +89,7 @@ namespace ProgramRunNotifier
                 shortcut.TargetPath = Assembly.GetExecutingAssembly().Location;
 
                 string arguments;
-                if(radioButton_notification.Checked)
+                if (radioButton_notification.Checked)
                 {
                     arguments = "\"" +
                         textBox_path.Text + "\" \"" +           //target path
@@ -83,14 +107,25 @@ namespace ProgramRunNotifier
                 shortcut.Arguments = arguments;
                 shortcut.Save();
 
-                label_success.Visible = true;
-                label_error.Visible = false;
+                Success();
             }
-            catch
+            catch (Exception ex)
             {
-                label_success.Visible = false;
-                label_error.Visible = true;
+                Error(ex.Message);
             }
+        }
+
+        private void Success()
+        {
+            label_success.Visible = true;
+            label_error.Visible = false;
+        }
+
+        private void Error(string message)
+        {
+            MessageBox.Show(message, "Error");
+            label_success.Visible = false;
+            label_error.Visible = true;
         }
 
         private void button_browseProcess_Click(object sender, EventArgs e)
@@ -98,11 +133,9 @@ namespace ProgramRunNotifier
             openFileDialog_process.FileName = textBox_process.Text;
             DialogResult result = openFileDialog_process.ShowDialog();
 
-            if (result == System.Windows.Forms.DialogResult.OK)
+            if (result == DialogResult.OK)
             {
                 textBox_process.Text = openFileDialog_process.FileName;
-
-                //fileName = System.IO.Path.GetFileNameWithoutExtension(openFileDialog_target.FileName);
             }
         }
 
@@ -120,6 +153,31 @@ namespace ProgramRunNotifier
                 textBox_process.Enabled = true;
                 button_browseProcess.Enabled = true;
             }
-        }        
+        }
+
+        private void button_browseCustomLocation_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog_customLocation.SelectedPath = textBox_customLocation.Text;
+            DialogResult result = folderBrowserDialog_customLocation.ShowDialog();
+
+            if(result == DialogResult.OK)
+            {
+                textBox_customLocation.Text = folderBrowserDialog_customLocation.SelectedPath;
+            }
+        }
+
+        private void checkBox_customLocation_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox_customLocation.Checked)
+            {
+                textBox_customLocation.Enabled = true;
+                button_browseCustomLocation.Enabled = true;
+            }
+            else
+            {
+                textBox_customLocation.Enabled = false;
+                button_browseCustomLocation.Enabled = false;
+            }
+        }
     }
 }
